@@ -6,6 +6,6 @@ images:
   newTag: dab65718
 resources:
 - ../k8s_manifests/base/spring
-patches:
+patchesStrategicMerge:
 - spring-deployment-patch.yaml
 - spring-service-patch.yaml
