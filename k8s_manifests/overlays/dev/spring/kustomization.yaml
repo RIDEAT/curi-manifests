@@ -5,7 +5,7 @@ images:
   newName: 438022863212.dkr.ecr.ap-northeast-2.amazonaws.com/spring/curi-app
   newTag: dab65718
 resources:
-- curi-manifests/k8s_manifests/base/spring
+- ../../k8s_manifests/base/spring
 patchesStrategicMerge:
 - spring-deployment-patch.yaml
 - spring-service-patch.yaml
