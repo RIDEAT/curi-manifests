@@ -6,6 +6,8 @@ images:
   newTag: dab65718
 resources:
 - ../../base
-patchesStrategicMerge:
-- spring-deployment-patch.yaml
-- spring-service-patch.yaml
+patches:
+- path: spring-deployment-patch.yaml
+- path: spring-service-patch.yaml
+  target:
+    namespace: eks-work
