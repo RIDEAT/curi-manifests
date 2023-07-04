@@ -3,7 +3,7 @@ kind: Kustomization
 images:
 - name: 438022863212.dkr.ecr.ap-northeast-2.amazonaws.com/spring/curi-app
   newName: 438022863212.dkr.ecr.ap-northeast-2.amazonaws.com/spring/curi-app
-  newTag: a0e47702
+  newTag: 16811cd4
 resources:
 - ../../base
 patches:
