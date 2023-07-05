@@ -14,6 +14,7 @@ spec:
       labels:
         app: backend-app
     spec:
+      revisionHistoryLimit: 1
       containers:
       - name: backend-app
         image: 332543631386.dkr.ecr.ap-northeast-2.amazonaws.com/spring/curi-app:latest
