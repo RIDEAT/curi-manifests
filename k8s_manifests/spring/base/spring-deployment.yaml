@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: backend-app
-        image: 438022863212.dkr.ecr.ap-northeast-2.amazonaws.com/spring/curi-app:latest
+        image: 332543631386.dkr.ecr.ap-northeast-2.amazonaws.com/spring/curi-app:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 8080

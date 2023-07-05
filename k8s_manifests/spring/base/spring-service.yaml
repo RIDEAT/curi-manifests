@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: backend-app-service2
+  name: backend-app-service
   annotations:
     alb.ingress.kubernetes.io/healthcheck-path: "/api/all"
 spec:
-  type: NodePort
+  type: LoadBalancer
   selector:
     app: backend-app
   ports:
