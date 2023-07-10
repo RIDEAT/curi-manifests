@@ -1,26 +1,26 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: backend-app
+  name: auth-app
   labels:
-    app: backend-app
+    app: auth-app
 spec:
   revisionHistoryLimit: 1
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
-      app: backend-app
+      app: auth-app
   template:
     metadata:
       labels:
-        app: backend-app
+        app: auth-app
     spec:
       containers:
-      - name: backend-app
-        image: 332543631386.dkr.ecr.ap-northeast-2.amazonaws.com/spring/curi-app:latest
+      - name: auth-app
+        image: 332543631386.dkr.ecr.ap-northeast-2.amazonaws.com/spring/curi-auth:latest
         imagePullPolicy: Always
         ports:
-        - containerPort: 8080
+        - containerPort: 8000
         resources:
           requests:
             cpu: 100m
