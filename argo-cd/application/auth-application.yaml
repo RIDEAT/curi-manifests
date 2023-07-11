@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: curi-spring-cd
+  name: curi-auth-cd
   namespace: argocd
 spec:
   project: default
