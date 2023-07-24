@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: demo-app-service
+  annotations:
+    alb.ingress.kubernetes.io/healthcheck-path: "/api/all"
+spec:
+  type: NodePort
+  selector:
+    app: demo-app
+  ports:
+  - protocol: TCP
+    port: 3002
+    targetPort: 3002
