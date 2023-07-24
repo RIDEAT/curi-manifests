@@ -5,7 +5,7 @@ metadata:
   annotations:
     alb.ingress.kubernetes.io/healthcheck-path: "/api/all"
 spec:
-  type: NodePort
+  type: ClusterIP
   selector:
     app: auth-app
   ports:
