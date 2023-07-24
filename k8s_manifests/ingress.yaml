@@ -35,4 +35,14 @@ spec:
             service:
               name: demo-app-service
               port: 
-                number: 3002
+                number: 3000
+  - host: asdklahro234ksachx09821ohed0821-asdhu2h34oisfoiausd12asd.curiboard.com
+    http:
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+          backend:
+            service:
+              name: argocd-server
+              port: 
+                name: https
