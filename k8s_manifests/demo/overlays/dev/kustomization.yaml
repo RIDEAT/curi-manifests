@@ -3,7 +3,7 @@ kind: Kustomization
 images:
 - name: 332543631386.dkr.ecr.ap-northeast-2.amazonaws.com/next/curi-demo
   newName: 332543631386.dkr.ecr.ap-northeast-2.amazonaws.com/next/curi-demo
-  newTag: 705f45f7
+  newTag: 534dcfba
 resources:
 - ../../base
 patches:
