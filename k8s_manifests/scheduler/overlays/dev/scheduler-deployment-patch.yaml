@@ -1,0 +1,15 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: scheduler-app
+  namespace: default
+  labels:
+    env: dev
+spec:
+  selector:
+    matchLabels:
+      app: scheduler-app
+  template:
+    metadata:
+      labels:
+        app: scheduler-app
