@@ -64,7 +64,7 @@ locals {
 
 
 locals {
-  vpc_cidr               = "10.42.0.0/16"
+  vpc_cidr               = "110.42.0.0/16"
   public_subnets         = [for k, v in local.azs : cidrsubnet(local.vpc_cidr, 8, k)]
   private_subnets        = [for k, v in local.azs : cidrsubnet(local.vpc_cidr, 8, k + 10)]
 
