@@ -1,26 +1,26 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  namespace: eks-work
-  name: next-ingress
+  namespace: argocd
+  name: argocd-dashboard-ingress
   annotations:
     kubernetes.io/ingress.class: alb
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/target-type: ip
-    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:ap-northeast-2:332543631386:certificate/5798a2c7-f499-4af5-9987-e0bf8543cfac
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:ap-northeast-2:332543631386:certificate/f49ac47d-e980-47f0-a892-452edcd59f99
     alb.ingress.kubernetes.io/ssl-policy: ELBSecurityPolicy-2016-08
-    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP":80,"HTTPS": 443}]'
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP":8080,"HTTPS": 8443}]'
     alb.ingress.kubernetes.io/actions.ssl-redirect: '{"Type": "redirect", "RedirectConfig": { "Protocol": "HTTPS", "Port": "443", "StatusCode": "HTTP_301"}}'
     external-dns.alpha.kubernetes.io/hostname: curiboard.com
 spec:
   rules:
-  - host: demo2.curiboard.com
+  - host: argocd-dashboard.dev.curiboard.com
     http:
       paths:
         - path: /
           pathType: Prefix
           backend:
             service:
-              name: demo-app-service
+              name: argo-cd-argocd-server
               port: 
-                number: 3000
+                name: https
