@@ -68,6 +68,8 @@ spec:
           value: update
         - name: ENVIRONMENT
           value: cloud
+        - name: FEIGN_SCHEDULER_URL
+          value: http://scheduler-app-service:8081
 
         resources:
           requests:
