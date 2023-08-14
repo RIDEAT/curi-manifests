@@ -55,12 +55,12 @@ spec:
         - name: AWS_SQS_QUEUE_NAME
           valueFrom:
             secretKeyRef: 
-              key: loglevel-secret
+              key: aws-sqs-name
               name: curi-secret
         - name: AWS_SQS_QUEUE_URL
           valueFrom:
             secretKeyRef: 
-              key: aws-sqs-name
+              key: aws-sqs-url
               name: curi-secret
         - name: AWS_REGION
           value: ap-northeast-2
