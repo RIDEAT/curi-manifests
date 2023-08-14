@@ -50,8 +50,8 @@ spec:
         - name: AWS_SECRET_KEY
           valueFrom:
             secretKeyRef: 
-              name: aws-secretkey
-              key: curi-secret
+              key: aws-secretkey
+              name: curi-secret
         - name: AWS_SQS_QUEUE_NAME
           valueFrom:
             secretKeyRef: 
