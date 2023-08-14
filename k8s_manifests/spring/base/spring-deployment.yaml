@@ -25,28 +25,28 @@ spec:
         - name: RDS_URL
           valueFrom:
             secretKeyRef: 
-              name: rds-url
-              key: curi-secret
+              key: rds-url
+              name: curi-secret
         - name: RDS_USERNAME
           valueFrom:
             secretKeyRef: 
-              name: rds-username
-              key: curi-secret
+              key: rds-username
+              name: curi-secret
         - name: RDS_PASSWORD
           valueFrom:
             secretKeyRef: 
-              name: rds-password
-              key: curi-secret
+              key: rds-password
+              name: curi-secret
         - name: MONGO_URL
           valueFrom:
             secretKeyRef: 
-              name: mongodb-url
-              key: curi-secret
+              key: mongodb-url
+              name: curi-secret
         - name: AWS_ACCESS_KEY
           valueFrom:
             secretKeyRef: 
-              name: aws-accesskey
-              key: curi-secret
+              key: aws-accesskey
+              name: curi-secret
         - name: AWS_SECRET_KEY
           valueFrom:
             secretKeyRef: 
@@ -55,13 +55,13 @@ spec:
         - name: AWS_SQS_QUEUE_NAME
           valueFrom:
             secretKeyRef: 
-              name: loglevel-secret
-              key: curi-secret
+              key: loglevel-secret
+              name: curi-secret
         - name: AWS_SQS_QUEUE_URL
           valueFrom:
             secretKeyRef: 
-              name: aws-sqs-name
-              key: curi-secret
+              key: aws-sqs-name
+              name: curi-secret
         - name: AWS_REGION
           value: ap-northeast-2
         - name: DDL_AUTO
