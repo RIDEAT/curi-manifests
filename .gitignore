@@ -32,3 +32,5 @@ env
 *.zip
 
 cdk.out
+
+secrets
