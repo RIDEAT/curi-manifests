@@ -21,6 +21,48 @@ spec:
         imagePullPolicy: Always
         ports:
         - containerPort: 8081
+        env:
+        - name: RDS_URL
+          valueFrom:
+            secretKeyRef: 
+              key: rds-url
+              name: curi-secret
+        - name: RDS_USERNAME
+          valueFrom:
+            secretKeyRef: 
+              key: rds-username
+              name: curi-secret
+        - name: RDS_PASSWORD
+          valueFrom:
+            secretKeyRef: 
+              key: rds-password
+              name: curi-secret
+        - name: AWS_ACCESS_KEY
+          valueFrom:
+            secretKeyRef: 
+              key: aws-accesskey
+              name: curi-secret
+        - name: AWS_SECRET_KEY
+          valueFrom:
+            secretKeyRef: 
+              key: aws-secretkey
+              name: curi-secret
+        - name: AWS_SQS_QUEUE_NAME
+          valueFrom:
+            secretKeyRef: 
+              key: aws-sqs-name
+              name: curi-secret
+        - name: AWS_SQS_QUEUE_URL
+          valueFrom:
+            secretKeyRef: 
+              key: aws-sqs-url
+              name: curi-secret
+        - name: AWS_REGION
+          value: ap-northeast-2
+        - name: DDL_AUTO
+          value: update
+        - name: ENVIRONMENT
+          value: cloud
         resources:
           requests:
             cpu: 100m
