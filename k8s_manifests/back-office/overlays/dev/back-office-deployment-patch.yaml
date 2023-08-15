@@ -1,0 +1,15 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: back-office-app
+  namespace: default
+  labels:
+    env: dev
+spec:
+  selector:
+    matchLabels:
+      app: back-office-app
+  template:
+    metadata:
+      labels:
+        app: back-office-app
