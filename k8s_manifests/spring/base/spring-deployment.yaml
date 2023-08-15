@@ -73,10 +73,10 @@ spec:
 
         resources:
           requests:
-            cpu: 100m
+            cpu: 500m
             memory: 512Mi
           limits:
-            cpu: 250m
+            cpu: 750m
             memory: 768Mi
         lifecycle:
           preStop:
