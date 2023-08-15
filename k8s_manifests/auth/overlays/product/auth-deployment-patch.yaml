@@ -13,3 +13,11 @@ spec:
     metadata:
       labels:
         app: auth-app
+    spec:
+      containers:
+      - name: auth-app
+        resources:
+          requests:
+            memory: 256Mi
+          limits:
+            memory: 512Mi

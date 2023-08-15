@@ -13,3 +13,11 @@ spec:
     metadata:
       labels:
         app: scheduler-app
+    spec:
+      containers:
+      - name: scheduler-app
+        resources:
+          requests:
+            memory: 256Mi
+          limits:
+            memory: 512Mi
