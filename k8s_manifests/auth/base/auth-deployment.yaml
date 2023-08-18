@@ -21,6 +21,42 @@ spec:
         imagePullPolicy: Always
         ports:
         - containerPort: 8000
+        env:
+        - name: RDS_URL
+          valueFrom:
+            secretKeyRef: 
+              key: rds-url
+              name: curi-secret
+        - name: RDS_USERNAME
+          valueFrom:
+            secretKeyRef: 
+              key: rds-username
+              name: curi-secret
+        - name: RDS_PASSWORD
+          valueFrom:
+            secretKeyRef: 
+              key: rds-password
+              name: curi-secret
+        - name: JWT_AUTH_SECRET_KEY
+          valueFrom:
+            secretKeyRef: 
+              key: jwt-auth-secret
+              name: curi-secret
+        - name: JWT_REFRESH_SECRET_KEY
+          valueFrom:
+            secretKeyRef: 
+              key: jwt-refresh-secret
+              name: curi-secret
+        - name: JWT_AUTH_EXPIRED_MS
+          valueFrom:
+            secretKeyRef: 
+              key: jwt-auth-expired-ms
+              name: curi-secret
+        - name: JWT_REFRESH_EXPIRED_MS
+          valueFrom:
+            secretKeyRef: 
+              key: jwt-refresh-expired-ms
+              name: curi-secret
         resources:
           requests:
             cpu: 100m
