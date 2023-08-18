@@ -57,6 +57,8 @@ spec:
             secretKeyRef: 
               key: jwt-refresh-expired-ms
               name: curi-secret
+        - name: ENVIRONMENT
+          value: cloud
         resources:
           requests:
             cpu: 100m
