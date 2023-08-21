@@ -62,6 +62,21 @@ spec:
             secretKeyRef: 
               key: aws-sqs-url
               name: curi-secret
+        - name: AWS_S3_BUCKET
+          valueFrom:
+            secretKeyRef: 
+              key: aws-s3-bucket
+              name: curi-secret
+        - name: AWS_CLOUDFRONT_URL
+          valueFrom:
+            secretKeyRef: 
+              key: aws-cloudfront-url
+              name: curi-secret
+        - name: AWS_CLOUDFRONT_KEYPAIR
+          valueFrom:
+            secretKeyRef: 
+              key: aws-cloudfront-keypair
+              name: curi-secret
         - name: SLACK_CLIENT_ID
           valueFrom:
             secretKeyRef: 
