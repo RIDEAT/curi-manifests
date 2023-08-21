@@ -62,6 +62,26 @@ spec:
             secretKeyRef: 
               key: aws-sqs-url
               name: curi-secret
+        - name: SLACK_CLIENT_ID
+          valueFrom:
+            secretKeyRef: 
+              key: slack-client-id
+              name: curi-secret
+        - name: SLACK_CLIENT_SECRET
+          valueFrom:
+            secretKeyRef: 
+              key: slack-client-secret
+              name: curi-secret
+        - name: SLACK_REDIRECT_URL
+          valueFrom:
+            secretKeyRef: 
+              key: slack-redirect-url
+              name: curi-secret
+        - name: SLACK_BOT_TOKEN
+          valueFrom:
+            secretKeyRef: 
+              key: slack-bot-token
+              name: curi-secret
         - name: AWS_REGION
           value: ap-northeast-2
         - name: DDL_AUTO
