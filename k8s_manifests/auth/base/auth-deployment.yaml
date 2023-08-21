@@ -57,6 +57,8 @@ spec:
             secretKeyRef: 
               key: jwt-refresh-expired-ms
               name: curi-secret
+        - name : DDL_AUTO
+          value : update
         - name: ENVIRONMENT
           value: cloud
         resources:
