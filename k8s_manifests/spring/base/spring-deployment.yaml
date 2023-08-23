@@ -105,7 +105,18 @@ spec:
           value: cloud
         - name: FEIGN_SCHEDULER_URL
           value: http://scheduler-app-service:8081
-
+        readinessProbe:
+          httpGet:
+            port: 8080
+            path: /health
+          initialDelaySeconds: 50
+          periodSeconds: 30
+        livenessProbe:
+          httpGet:
+            port: 8080
+            path: /health
+          initialDelaySeconds: 100
+          periodSeconds: 30
         resources:
           requests:
             cpu: 500m

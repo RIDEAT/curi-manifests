@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: backend-app-service
   annotations:
-    alb.ingress.kubernetes.io/healthcheck-path: "/api/all"
+    alb.ingress.kubernetes.io/healthcheck-path: "/health"
 spec:
   type: NodePort
   selector:
