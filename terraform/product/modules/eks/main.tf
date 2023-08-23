@@ -83,7 +83,6 @@ module "eks_blueprints_addons" {
     enable_aws_cloudwatch_metrics          = true
     enable_aws_for_fluentbit               = true
     enable_cluster_autoscaler              = true
-    enable_ingress_nginx                   = true
     external_dns_route53_zone_arns = ["arn:aws:route53:::hostedzone/Z02247923CIHUAPQTGA29"]
 
     tags = var.tags
