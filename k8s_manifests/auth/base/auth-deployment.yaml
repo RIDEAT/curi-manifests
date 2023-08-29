@@ -57,6 +57,18 @@ spec:
             secretKeyRef: 
               key: jwt-refresh-expired-ms
               name: curi-secret
+        - name : GOOGLE_CLIENT_ID
+          valueFrom:
+            secretKeyRef: 
+              key: google-client-id
+              name: curi-secret
+        - name : GOOGLE_CLIENT_SECRET
+          valueFrom:
+            secretKeyRef: 
+              key: google-client-secret
+              name: curi-secret
+        - name : GOOGLE_REDIRECT_URI
+          value: https://app.dev.onbird.team/google
         - name : DDL_AUTO
           value : update
         - name: ENVIRONMENT
