@@ -3,7 +3,7 @@ kind: Kustomization
 images:
 - name: 332543631386.dkr.ecr.ap-northeast-2.amazonaws.com/spring/curi-scheduler
   newName: 332543631386.dkr.ecr.ap-northeast-2.amazonaws.com/spring/curi-scheduler
-  newTag: 9b2f7c52
+  newTag: ba3d01d3
 resources:
 - ../../base
 patches:
