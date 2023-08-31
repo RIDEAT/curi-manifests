@@ -62,7 +62,7 @@ spec:
         - name: DDL_AUTO
           value: update
         - name: SEQUENCE_CRON
-          value: "0 0/5 9-23 * * *"
+          value: "0 0/5 1-23 * * *"
         - name: ENVIRONMENT
           value: cloud
         readinessProbe:
