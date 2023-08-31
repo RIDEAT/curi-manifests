@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: view-app
+  labels:
+    app: view-app
+spec:
+  revisionHistoryLimit: 1
+  replicas: 1
+  selector:
+    matchLabels:
+      app: view-app
+  template:
+    metadata:
+      labels:
+        app: view-app
+    spec:
+      containers:
+      - name: view-app
+        image: 332543631386.dkr.ecr.ap-northeast-2.amazonaws.com/next/curi-view:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 3000
+        resources:
+          requests:
+            cpu: 100m
+            memory: 512Mi
+          limits:
+            cpu: 250m
+            memory: 768Mi
+        lifecycle:
+          preStop:
+            exec:
+              command: ["/bin/sh", "-c", "sleep 2"]

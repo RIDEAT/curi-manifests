@@ -1,0 +1,15 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: view-app
+  namespace: default
+  labels:
+    env: product
+spec:
+  selector:
+    matchLabels:
+      app: view-app
+  template:
+    metadata:
+      labels:
+        app: view-app
