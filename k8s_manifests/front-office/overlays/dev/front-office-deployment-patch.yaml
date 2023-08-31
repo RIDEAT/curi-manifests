@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: view-app
+  name: front-office-app
   namespace: default
   labels:
     env: dev
 spec:
   selector:
     matchLabels:
-      app: view-app
+      app: front-office-app
   template:
     spec:
       containers:
-      - name: view-app
+      - name: front-office-app
         resources:
           requests:
             memory: 128Mi

@@ -14,14 +14,14 @@ metadata:
     external-dns.alpha.kubernetes.io/hostname: onbird.team
 spec:
   rules:
-  - host: view.dev.onbird.team
+  - host: front-office.dev.onbird.team
     http:
       paths:
         - path: /
           pathType: Prefix
           backend:
             service:
-              name: view-app-service
+              name: front-office-app-service
               port: 
                 number: 3000
   - host: app.dev.onbird.team

@@ -1,14 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: curi-view-cd
+  name: curi-front-office-cd
   namespace: argocd
 spec:
   project: default
   source:
     repoURL: 'https://github.com/RIDEAT/curi-manifests'
     targetRevision: main
-    path: k8s_manifests/view/overlays/product
+    path: k8s_manifests/front-office/overlays/dev
   destination:
     server: https://kubernetes.default.svc
     namespace: eks-work

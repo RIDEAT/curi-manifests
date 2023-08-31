@@ -1,23 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: view-app
+  name: front-office-app
   labels:
-    app: view-app
+    app: front-office-app
 spec:
   revisionHistoryLimit: 1
   replicas: 1
   selector:
     matchLabels:
-      app: view-app
+      app: front-office-app
   template:
     metadata:
       labels:
-        app: view-app
+        app: front-office-app
     spec:
       containers:
-      - name: view-app
-        image: 332543631386.dkr.ecr.ap-northeast-2.amazonaws.com/next/curi-view:latest
+      - name: front-office-app
+        image: 332543631386.dkr.ecr.ap-northeast-2.amazonaws.com/next/curi-front-office:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 3000
