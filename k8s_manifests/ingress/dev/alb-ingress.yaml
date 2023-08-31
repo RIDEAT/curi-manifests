@@ -14,7 +14,7 @@ metadata:
     external-dns.alpha.kubernetes.io/hostname: onbird.team
 spec:
   rules:
-  - host: front-office.dev.onbird.team
+  - host: view.dev.onbird.team
     http:
       paths:
         - path: /
