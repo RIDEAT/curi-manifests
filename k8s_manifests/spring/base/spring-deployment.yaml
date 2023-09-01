@@ -92,6 +92,11 @@ spec:
             secretKeyRef: 
               key: slack-redirect-url
               name: curi-secret
+        - name: SLACK_MEMBER_REDIRECT_URL
+          valueFrom:
+            secretKeyRef: 
+              key: slack-member-redirect-url
+              name: curi-secret
         - name: SLACK_BOT_TOKEN
           valueFrom:
             secretKeyRef: 
