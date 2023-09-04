@@ -108,8 +108,12 @@ spec:
           value: update
         - name: ENVIRONMENT
           value: cloud
+        - name: ALERT_CRON
+          value: "0 0/5 1-23 * * *"
         - name: FEIGN_SCHEDULER_URL
           value: http://scheduler-app-service:8081
+        - name: AUTH_URL
+          value: http://auth-app-service:8000
         readinessProbe:
           httpGet:
             port: 8080
