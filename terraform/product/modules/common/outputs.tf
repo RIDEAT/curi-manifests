@@ -22,3 +22,16 @@ output "region" {
     description = "vpc region name"
     value = data.aws_region.current.id
 }
+
+output "curi_rds_endpoint" {
+  description = "Endpoint of the RDS database for the curi service"
+  value       = module.rds_postgresql.db_instance_endpoint
+}
+output "curi_rds_master_username" {
+  description = "Master username of the RDS database for the curi service"
+  value       = "rideat"
+}
+output "curi_rds_master_password" {
+  description = "Master password of the RDS database for the curi service"
+  value       = random_string.db_master.result
+}

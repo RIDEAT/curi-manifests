@@ -23,7 +23,6 @@ output "region" {
     value = data.aws_region.current.id
 }
 
-
 output "curi_rds_endpoint" {
   description = "Endpoint of the RDS database for the curi service"
   value       = module.rds_postgresql.db_instance_endpoint
