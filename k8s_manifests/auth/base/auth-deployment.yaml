@@ -22,6 +22,8 @@ spec:
         ports:
         - containerPort: 8000
         env:
+        - name : RDS_DB_NAME
+          value : auth
         - name: RDS_URL
           valueFrom:
             secretKeyRef: 
