@@ -70,7 +70,7 @@ spec:
               key: google-client-secret
               name: curi-secret
         - name : GOOGLE_REDIRECT_URI
-          value: https://app.dev.onbird.team/google
+          value: https://app.dev.workplug.team/google
         - name : DDL_AUTO
           value : update
         - name: ENVIRONMENT
