@@ -1,8 +1,8 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  namespace: kube-prometheus-stack
-  name: grafana-ingress
+  namespace: eks-work
+  name: alb-ingress
   annotations:
     kubernetes.io/ingress.class: alb
     alb.ingress.kubernetes.io/group.name: alb-product
@@ -14,13 +14,43 @@ metadata:
     external-dns.alpha.kubernetes.io/hostname: workplug.team
 spec:
   rules:
-  - host: grafana-dashboard.workplug.team
+  - host: view.workplug.team
     http:
       paths:
         - path: /
           pathType: Prefix
           backend:
             service:
-              name: kube-prometheus-stack-grafana
+              name: front-office-app-service
               port: 
-                number: 80
+                number: 3000
+  - host: app.workplug.team
+    http:
+      paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: back-office-app-service
+              port: 
+                number: 3001
+  - host: api.workplug.team
+    http:
+      paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: backend-app-service
+              port: 
+                number: 8080
+  - host: auth.workplug.team
+    http:
+      paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: "auth-app-service"
+              port:
+                number: 8000
