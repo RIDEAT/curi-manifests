@@ -77,13 +77,13 @@ spec:
           value: cloud
         readinessProbe:
           httpGet:
-            port: 8081
+            port: 8000
             path: /health
           initialDelaySeconds: 30
           periodSeconds: 30
         livenessProbe:
           httpGet:
-            port: 8081
+            port: 8000
             path: /health
           initialDelaySeconds: 60
           periodSeconds: 30
