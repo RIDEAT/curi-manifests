@@ -4,13 +4,10 @@ images:
 - name: 332543631386.dkr.ecr.ap-northeast-2.amazonaws.com/next/curi-back-office
   newName: 332543631386.dkr.ecr.ap-northeast-2.amazonaws.com/next/curi-back-office
   newTag: "23090600"
-- name: 332543631386.dkr.ecr.ap-northeast-2.amazonaws.com/next/curi-demo
-  newName: 332543631386.dkr.ecr.ap-northeast-2.amazonaws.com/next/curi-demo
-  newTag: ea955729
 resources:
 - ../../base
 patches:
-- path: demo-deployment-patch.yaml
-- path: demo-service-patch.yaml
+- path: back-office-deployment-patch.yaml
+- path: back-office-service-patch.yaml
   target:
     namespace: eks-work

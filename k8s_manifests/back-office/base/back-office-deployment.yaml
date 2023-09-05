@@ -134,7 +134,7 @@ spec:
             exec:
               command: ["/bin/sh", "-c", "sleep 2"]
         volumeMounts:
-        - mountPath: /app/apps/back-office/.env.local
+        - mountPath: /app/apps/back-office/.env
           name: env-secret-volume
           readOnly: true
           subPath: .env.local

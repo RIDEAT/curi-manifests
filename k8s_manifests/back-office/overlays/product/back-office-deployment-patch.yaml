@@ -1,15 +1,15 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: demo-app
+  name: back-office-app
   namespace: default
   labels:
     env: product
 spec:
   selector:
     matchLabels:
-      app: demo-app
+      app: back-office-app
   template:
     metadata:
       labels:
-        app: demo-app
+        app: back-office-app
