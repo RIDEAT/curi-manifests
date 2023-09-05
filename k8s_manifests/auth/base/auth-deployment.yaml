@@ -75,18 +75,6 @@ spec:
           value : update
         - name: ENVIRONMENT
           value: cloud
-        readinessProbe:
-          httpGet:
-            port: 8000
-            path: /health
-          initialDelaySeconds: 30
-          periodSeconds: 30
-        livenessProbe:
-          httpGet:
-            port: 8000
-            path: /health
-          initialDelaySeconds: 60
-          periodSeconds: 30
         resources:
           requests:
             cpu: 100m
