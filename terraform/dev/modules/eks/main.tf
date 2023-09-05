@@ -79,7 +79,7 @@ module "eks_blueprints_addons" {
     enable_external_dns                    = true
     enable_argocd                          = true
     enable_cluster_autoscaler              = true
-    external_dns_route53_zone_arns = ["arn:aws:route53:::hostedzone/Z08366842A93BHLNLKLQX"]
+    external_dns_route53_zone_arns = ["arn:aws:route53:::hostedzone/Z0934139S3TFB9Q1ANA7"]
 
     tags = var.tags
 }
