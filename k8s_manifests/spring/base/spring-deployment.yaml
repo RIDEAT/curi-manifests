@@ -116,6 +116,8 @@ spec:
           value: http://scheduler-app-service:8081
         - name: AUTH_URL
           value: http://auth-app-service:8000
+        - name: FRONT_OFFICE_URL
+          value: https://view.workplug.team
         readinessProbe:
           httpGet:
             port: 8080
