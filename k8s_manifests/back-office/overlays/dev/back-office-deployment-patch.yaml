@@ -13,11 +13,11 @@ spec:
     metadata:
       labels:
         app: back-office-app
-      # spec:
-      # containers:
-      # - name: back-office-app
-      #   resources:
-      #     requests:
-      #       memory: 256Mi
-      #     limits:
-      #       memory: 512Mi
+    spec:
+      containers:
+      - name: back-office-app
+        resources:
+          requests:
+            memory: 256Mi
+          limits:
+            memory: 512Mi
