@@ -117,7 +117,7 @@ spec:
         - name: AUTH_URL
           value: http://auth-app-service:8000
         - name: FRONT_OFFICE_URL
-          value: https://view.workplug.team
+          value: https://view.dev.workplug.team
         readinessProbe:
           httpGet:
             port: 8080
