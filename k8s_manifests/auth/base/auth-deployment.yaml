@@ -75,6 +75,11 @@ spec:
           value : update
         - name: ENVIRONMENT
           value: cloud
+        - name: FIREBASE_JSON
+          valueFrom:
+            secretKeyRef: 
+              key: firebase-json
+              name: curi-secret
         readinessProbe:
           httpGet:
             port: 8000
