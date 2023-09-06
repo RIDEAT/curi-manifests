@@ -23,4 +23,4 @@ spec:
             service:
               name: demo-app-service
               port: 
-                number: 3000
+                number: 3002
