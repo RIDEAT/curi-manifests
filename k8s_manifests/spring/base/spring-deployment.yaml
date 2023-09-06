@@ -104,6 +104,11 @@ spec:
             secretKeyRef: 
               key: slack-bot-token
               name: curi-secret
+        - name : SLACK_RIDEAT_BOT_TOKEN
+          valueFrom:
+            secretKeyRef: 
+              key: slack-rideat-bot-token
+              name: curi-secret
         - name: AWS_REGION
           value: ap-northeast-2
         - name: DDL_AUTO
