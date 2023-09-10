@@ -70,7 +70,10 @@ spec:
               key: google-client-secret
               name: curi-secret
         - name : GOOGLE_REDIRECT_URI
-          value: https://app.dev.workplug.team/google
+          valueFrom:
+            secretKeyRef: 
+              key: google-redirect_uri
+              name: curi-secret
         - name : DDL_AUTO
           value : update
         - name: ENVIRONMENT
