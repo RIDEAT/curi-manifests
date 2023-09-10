@@ -34,3 +34,4 @@ env
 cdk.out
 
 secrets
+argo-notification

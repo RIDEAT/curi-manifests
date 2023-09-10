@@ -109,6 +109,11 @@ spec:
             secretKeyRef: 
               key: slack-rideat-bot-token
               name: curi-secret
+        - name : WORKPLUG_APP_URL
+          valueFrom:
+            secretKeyRef: 
+              key: app-url
+              name: curi-secret
         - name: AWS_REGION
           value: ap-northeast-2
         - name: DDL_AUTO
