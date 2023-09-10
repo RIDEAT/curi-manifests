@@ -3,7 +3,7 @@ kind: Kustomization
 images:
 - name: 332543631386.dkr.ecr.ap-northeast-2.amazonaws.com/next/curi-back-office
   newName: 332543631386.dkr.ecr.ap-northeast-2.amazonaws.com/next/curi-back-office
-  newTag: c74503e1
+  newTag: 1a2dffef
 resources:
 - ../../base
 patches:
