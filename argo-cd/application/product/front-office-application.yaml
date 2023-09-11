@@ -1,6 +1,13 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
+  annotations:
+    notifications.argoproj.io/subscribe.on-sync-succeeded.slack: workplug-argocd
+    notifications.argoproj.io/subscribe.on-sync-failed.slack: workplug-argocd
+    notifications.argoproj.io/subscribe.on-sync-running.slack: workplug-argocd
+    notifications.argoproj.io/subscribe.on-sync-status-unknown.slack: workplug-argocd
+    notifications.argoproj.io/subscribe.on-deployed.slack: workplug-argocd
+    notifications.argoproj.io/subscribe.on-health-degraded.slack: workplug-argocd
   name: curi-front-office-cd
   namespace: argocd
 spec:
