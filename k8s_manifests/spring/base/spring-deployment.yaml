@@ -144,7 +144,7 @@ spec:
         - name: WORKPLUG_TEMPLATE_ARRAY
           valueFrom:
             secretKeyRef: 
-              key: front-office-url
+              key: workplug-template-array
               name: curi-secret
         readinessProbe:
           httpGet:
