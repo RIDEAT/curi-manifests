@@ -141,6 +141,11 @@ spec:
             secretKeyRef: 
               key: front-office-url
               name: curi-secret
+        - name: WORKPLUG_TEMPLATE_ARRAY
+          valueFrom:
+            secretKeyRef: 
+              key: front-office-url
+              name: curi-secret
         readinessProbe:
           httpGet:
             port: 8080
