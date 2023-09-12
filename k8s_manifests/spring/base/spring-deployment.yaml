@@ -109,6 +109,16 @@ spec:
             secretKeyRef: 
               key: slack-rideat-bot-token
               name: curi-secret
+        - name : SLACK_RIDEAT_ERROR_CHANNEL
+          valueFrom:
+            secretKeyRef: 
+              key: slack-rideat-error-channel
+              name: curi-secret
+        - name : SLACK_RIDEAT_NOTIFY_CHANNEL
+          valueFrom:
+            secretKeyRef: 
+              key: slack-rideat-notify-channel
+              name: curi-secret
         - name : WORKPLUG_APP_URL
           valueFrom:
             secretKeyRef: 
@@ -127,7 +137,10 @@ spec:
         - name: AUTH_URL
           value: http://auth-app-service:8000
         - name: FRONT_OFFICE_URL
-          value: https://view.dev.workplug.team
+          valueFrom:
+            secretKeyRef: 
+              key: front-office-url
+              name: curi-secret
         readinessProbe:
           httpGet:
             port: 8080
