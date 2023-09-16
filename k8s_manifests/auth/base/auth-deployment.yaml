@@ -83,6 +83,11 @@ spec:
             secretKeyRef: 
               key: firebase-json
               name: curi-secret
+        - name: SWAGGER_ENABLED
+          valueFrom:
+            secretKeyRef: 
+              key: swagger-enable
+              name: curi-secret
         readinessProbe:
           httpGet:
             port: 8000
