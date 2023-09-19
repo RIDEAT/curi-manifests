@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: ai-app-service
   annotations:
-    alb.ingress.kubernetes.io/healthcheck-path: "/api/all"
+    alb.ingress.kubernetes.io/healthcheck-path: "/"
   labels:
     env: dev
 spec:
