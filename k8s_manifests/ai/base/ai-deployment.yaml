@@ -23,7 +23,7 @@ spec:
         - containerPort: 5000
         env:
         - name : FLASK_APP
-          value : app.py
+          value : myenv/app.py
         resources:
           requests:
             cpu: 100m
