@@ -136,6 +136,8 @@ spec:
           value: http://scheduler-app-service:8081
         - name: AUTH_URL
           value: http://auth-app-service:8000
+        - name: WORKPLUG_AI_URL
+          value: http://ai-app-service:8000
         - name: FRONT_OFFICE_URL
           valueFrom:
             secretKeyRef: 

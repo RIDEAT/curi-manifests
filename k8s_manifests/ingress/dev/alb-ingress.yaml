@@ -54,3 +54,13 @@ spec:
               name: "auth-app-service"
               port:
                 number: 8000
+  - host: ai.dev.workplug.team
+    http:
+      paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: "ai-app-service"
+              port:
+                number: 5000
