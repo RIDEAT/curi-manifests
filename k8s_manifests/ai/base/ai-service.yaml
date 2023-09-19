@@ -10,5 +10,5 @@ spec:
     app: ai-app
   ports:
   - protocol: TCP
-    port: 3002
-    targetPort: 3000
+    port: 5000
+    targetPort: 5000

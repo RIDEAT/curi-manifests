@@ -80,7 +80,7 @@ module "eks_blueprints_addons" {
     enable_metrics_server                  = true
     enable_external_dns                    = true
     enable_argocd                          = true
-    enable_aws_cloudwatch_metrics          = true
+    enable_aws_cloudwatch_metrics          = false
     enable_aws_for_fluentbit               = true
     enable_cluster_autoscaler              = true
     external_dns_route53_zone_arns = ["arn:aws:route53:::hostedzone/Z02247923CIHUAPQTGA29","arn:aws:route53:::hostedzone/Z0934139S3TFB9Q1ANA7"]
