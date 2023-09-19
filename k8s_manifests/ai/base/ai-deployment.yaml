@@ -24,10 +24,17 @@ spec:
         env:
         - name : FLASK_APP
           value : myenv/app.py
+        - name : PINECONE_API_ENV
+          value : gcp-starter
         - name: OPENAI_API_KEY
           valueFrom:
             secretKeyRef: 
               key: openapi-key
+              name: curi-secret
+        - name: PINECONE_API_KEY
+          valueFrom:
+            secretKeyRef: 
+              key: pinecon-key
               name: curi-secret
         resources:
           requests:
