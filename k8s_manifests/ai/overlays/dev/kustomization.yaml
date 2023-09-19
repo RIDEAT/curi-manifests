@@ -3,7 +3,7 @@ kind: Kustomization
 images:
 - name: 332543631386.dkr.ecr.ap-northeast-2.amazonaws.com/flask/ai
   newName: 332543631386.dkr.ecr.ap-northeast-2.amazonaws.com/flask/ai
-  newTag: b7c46fd8
+  newTag: 8b94f09d
 resources:
 - ../../base
 patches:
