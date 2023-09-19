@@ -18,3 +18,6 @@ spec:
             memory: 128Mi
           limits:
             memory: 256Mi
+        env:
+        - name : FLASK_DEBUG
+          value : "true"
