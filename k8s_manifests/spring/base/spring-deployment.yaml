@@ -137,7 +137,7 @@ spec:
         - name: AUTH_URL
           value: http://auth-app-service:8000
         - name: WORKPLUG_AI_URL
-          value: http://ai-app-service:8000
+          value: http://ai-app-service:5000
         - name: FRONT_OFFICE_URL
           valueFrom:
             secretKeyRef: 
