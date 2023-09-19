@@ -24,6 +24,11 @@ spec:
         env:
         - name : FLASK_APP
           value : myenv/app.py
+        - name: OPENAI_API_KEY
+          valueFrom:
+            secretKeyRef: 
+              key: openapi-key
+              name: curi-secret
         resources:
           requests:
             cpu: 100m
