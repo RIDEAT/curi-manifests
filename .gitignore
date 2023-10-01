@@ -36,3 +36,4 @@ cdk.out
 secrets
 argo-notification
 argocd-notifications-secret
+__pycache__
