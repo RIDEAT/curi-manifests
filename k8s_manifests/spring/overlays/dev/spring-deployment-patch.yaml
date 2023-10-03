@@ -5,6 +5,9 @@ metadata:
   namespace: default
   labels:
     env: dev
+    tags.datadoghq.com/env: develop
+    tags.datadoghq.com/service: backend-app
+    tags.datadoghq.com/version: "1.0"
 spec:
   selector:
     matchLabels:
@@ -16,52 +19,67 @@ spec:
         tags.datadoghq.com/env: develop
         tags.datadoghq.com/service: backend-app
         tags.datadoghq.com/version: "1.0"
+        admission.datadoghq.com/enabled: "true"
+      annotations:
+        admission.datadoghq.com/java-lib.version: "v1.21.0"
     spec:
-      volumes: 
-      - name: datadog-apm-agent 
-        emptyDir: {}
+      # volumes: 
+      # - name: datadog-apm-agent 
+      #   emptyDir: {}
       containers:
       - name: backend-app
-        volumeMounts:
-        - name: datadog-apm-agent 
-          mountPath: /datadog/apm/agent
+        # volumeMounts:
+        # - name: datadog-apm-agent 
+        #   mountPath: /datadog/apm/agent
         env:
-        - name: DD_AGENT_HOST
-          valueFrom:
-            fieldRef:
-              fieldPath: status.hostIP
-        - name: DD_SERVICE
-          valueFrom:
-                fieldRef:
-                  fieldPath: metadata.labels['tags.datadoghq.com/service']
-        - name: DD_ENV
-          valueFrom:
-                fieldRef:
-                  fieldPath: metadata.labels['tags.datadoghq.com/env']
-        - name: DD_VERSION
-          valueFrom:
-                fieldRef:
-                  fieldPath: metadata.labels['tags.datadoghq.com/version']
-        - name: DD_TRACE_ENABLED
-          value: "true"
-        - name: DD_TRACE_SAMPLE_RATE
-          value: "1"
-        - name: DD_PROFILING_ENABLED
-          value: "true"
-        - name: DD_LOGS_INJECTION
-          value: "true"
-        - name: DD_JMXFETCH_ENABLED
-          value: "true"
-        - name: JAVA_OPTS
-          value: "-javaagent:/datadog/apm/agent/dd-java-agent-1.9.0.jar"
-      initContainers:
-      - name: datadog-apm-agent
-        image: busybox
-        command:
-        - wget
-        - -O
-        - /datadog/apm/agent/dd-java-agent-1.9.0.jar
-        - https://repo1.maven.org/maven2/com/datadoghq/dd-java-agent/1.9.0/dd-java-agent-1.9.0.jar
-        volumeMounts:
-        - name: datadog-apm-agent
-          mountPath: /datadog/apm/agent
+          - name: DD_PROFILING_ENABLED
+            value: "true"
+          - name: DD_LOGS_INJECTION
+            value: "true"
+          - name: DD_APPSEC_ENABLED
+            value: "true"
+          - name: DD_IAST_ENABLED
+            value: "true"
+          - name: DD_TRACE_SAMPLE_RATE
+            value: "1"
+          - name: DD_JMXFETCH_ENABLED
+            value: "true"
+      #   - name: DD_AGENT_HOST
+      #     valueFrom:
+      #       fieldRef:
+      #         fieldPath: status.hostIP
+      #   - name: DD_SERVICE
+      #     valueFrom:
+      #           fieldRef:
+      #             fieldPath: metadata.labels['tags.datadoghq.com/service']
+      #   - name: DD_ENV
+      #     valueFrom:
+      #           fieldRef:
+      #             fieldPath: metadata.labels['tags.datadoghq.com/env']
+      #   - name: DD_VERSION
+      #     valueFrom:
+      #           fieldRef:
+      #             fieldPath: metadata.labels['tags.datadoghq.com/version']
+      #   - name: DD_TRACE_ENABLED
+      #     value: "true"
+      #   - name: DD_TRACE_SAMPLE_RATE
+      #     value: "1"
+      #   - name: DD_PROFILING_ENABLED
+      #     value: "true"
+      #   - name: DD_LOGS_INJECTION
+      #     value: "true"
+      #   - name: DD_JMXFETCH_ENABLED
+      #     value: "true"
+      #   - name: JAVA_OPTS
+      #     value: "-javaagent:/datadog/apm/agent/dd-java-agent.jar"
+      # initContainers:
+      # - name: datadog-apm-agent
+      #   image: busybox
+      #   command:
+      #   - wget
+      #   - -O
+      #   - /datadog/apm/agent/dd-java-agent.jar
+      #   - https://repo1.maven.org/maven2/com/datadoghq/dd-java-agent/1.9.0/dd-java-agent-1.9.0.jar
+      #   volumeMounts:
+      #   - name: datadog-apm-agent
+      #     mountPath: /datadog/apm/agent
