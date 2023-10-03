@@ -15,13 +15,43 @@ spec:
       labels:
         app: backend-app
     spec:
+      volumes: 
+      - name: datadog-apm-agent 
+        emptyDir: {}
       containers:
       - name: backend-app
         image: 332543631386.dkr.ecr.ap-northeast-2.amazonaws.com/spring/curi-app:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
+        volumeMounts: 
+        - name: datadog-apm-agent 
+          mountPath: /datadog/apm/agent
         env:
+        - name: DD_AGENT_HOST
+          valueFrom:
+            fieldRef:
+              fieldPath: status.hostIP
+        - name: DD_SERVICE
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.labels['app']
+        - name: DD_ENV
+          value: "develop"
+        - name: DD_VERSION
+          value: "1.0"
+        - name: DD_TRACE_ENABLED
+          value: "true"
+        - name: DD_TRACE_SAMPLE_RATE
+          value: "1"
+        - name: DD_PROFILING_ENABLED
+          value: "true"
+        - name: DD_LOGS_INJECTION
+          value: "true"
+        - name: DD_JMXFETCH_ENABLED
+          value: "true"
+        - name: JAVA_OPTS
+          value: -javaagent:/path/to/dd-java-agent.jar
         - name : RDS_DB_NAME
           value : resource
         - name: RDS_URL
@@ -176,3 +206,14 @@ spec:
           preStop:
             exec:
               command: ["/bin/sh", "-c", "sleep 2"]
+      initContainers:
+      - name: datadog-apm-agent
+        image: busybox
+        command:
+        - wget
+        - -O
+        - /datadog/apm/agent/dd-java-agent.jar
+        - https://dtdg.co/latest-java-tracer
+        volumeMounts:
+        - name: datadog-apm-agent
+          mountPath: /datadog/apm/agent
