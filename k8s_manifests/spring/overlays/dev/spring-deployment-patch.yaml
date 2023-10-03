@@ -56,7 +56,7 @@ spec:
         - wget
         - -O
         - /datadog/apm/agent/dd-java-agent.jar
-        - https://dtdg.co/latest-java-tracer #https://repo1.maven.org/maven2/com/datadoghq/dd-java-agent/1.9.0/dd-java-agent-1.9.0.jar
+        - https://dtdg.co/java-tracer-v1 #https://repo1.maven.org/maven2/com/datadoghq/dd-java-agent/1.9.0/dd-java-agent-1.9.0.jar
         volumeMounts:
         - name: datadog-apm-agent
           mountPath: /datadog/apm/agent
