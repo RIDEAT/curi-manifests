@@ -46,7 +46,7 @@ spec:
         - name: DD_JMXFETCH_ENABLED
           value: "true"
         - name: JAVA_OPTS
-          value: -javaagent:/path/to/dd-java-agent-1.9.0.jar
+          value: -javaagent:/datadog/apm/agent/dd-java-agent-1.9.0.jar
       initContainers:
       - name: datadog-apm-agent
         image: busybox
