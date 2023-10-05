@@ -170,8 +170,8 @@ spec:
             cpu: 500m
             memory: 512Mi
           limits:
-            cpu: 750m
-            memory: 768Mi
+            cpu: 1250m
+            memory: 1000Mi
         lifecycle:
           preStop:
             exec:
