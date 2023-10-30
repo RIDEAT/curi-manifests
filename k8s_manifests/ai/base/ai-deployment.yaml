@@ -36,6 +36,8 @@ spec:
             secretKeyRef: 
               key: pinecon-key
               name: curi-secret
+        - name: SERPAPI_API_KEY
+          value: somthing
         resources:
           requests:
             cpu: 100m
