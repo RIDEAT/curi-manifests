@@ -21,6 +21,9 @@ spec:
         imagePullPolicy: Always
         ports:
         - containerPort: 3000
+        env:
+        - name : NEXT_PUBLIC_CHATBOT_ENDPOINT
+          value : "http://ai-app-service:5050"
         resources:
           requests:
             cpu: 100m
