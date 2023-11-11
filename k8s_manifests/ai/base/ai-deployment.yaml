@@ -22,6 +22,12 @@ spec:
         ports:
         - containerPort: 5000
         env:
+        - name : DEBUG
+          value : "False"
+        - name : LANGCHAIN_TRACING_V2
+          value: "true"
+        - name : PINECONE_API_ENV
+          value: "gcp-starter"
         - name : FLASK_APP
           value : myenv/app.py
         - name : PINECONE_API_ENV
@@ -40,6 +46,13 @@ spec:
           valueFrom:
             secretKeyRef: 
               key: serpapi-key
+              name: curi-secret
+        - name: LANGCHAIN_ENDPOINT
+          value: "https://api.smith.langchain.com"
+        - name: LANGCHAIN_API_KEY
+          valueFrom:
+            secretKeyRef: 
+              key: langchain-api-key
               name: curi-secret
         resources:
           requests:
